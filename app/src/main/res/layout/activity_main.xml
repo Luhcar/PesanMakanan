@@ -205,7 +205,7 @@
                 android:id="@+id/img2"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
-                android:background="@drawable/rendang"/>
+                android:background="@drawable/udang"/>
 
             <TextView
                 android:id="@+id/textView2"
