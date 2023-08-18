@@ -2,6 +2,7 @@ package com.example.pesanmakanan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -132,19 +133,23 @@ public class MainActivity extends AppCompatActivity {
                     int total = 0;
                     if (item>0){
                         String makanan = "Rendang";
-                        text = item + "\t" + makanan + "\t\t\t\t\t" + priceView;
+                        text += item + "\t\t\t" + makanan + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + priceView + "\n\n";
                         total = total + priceView;
                     }
                     if (item1>0){
                         String makanan = "Cumi Bakar";
-                        text = item1 + "\t" + makanan + "\t\t\t\t\t" + priceView1;
+                        text += item1 + "\t\t\t" + makanan + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + priceView1 + "\n\n";
                         total = total + priceView1;
                     }
                     if (item2>0){
                         String makanan = "Udang Bakar";
-                        text = item2 + "\t" + makanan + "\t\t\t\t\t" + priceView2;
+                        text += item2 + "\t\t\t" + makanan + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + priceView2 + "\n\n";
                         total = total + priceView2;
                     }
+                    Intent intent = new Intent(MainActivity.this, DaftarPesanan.class);
+                    intent.putExtra("Pesanan", text);
+                    intent.putExtra("Bayar", total);
+                    startActivity(intent);
                 }
             }
         });
